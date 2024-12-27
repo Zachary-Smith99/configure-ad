@@ -8,7 +8,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>Video Demonstration</h2>
 
-- ### [YouTube: How to Deploy on-premises Active Directory within Azure Compute](https://www.youtube.com)
+- ### [YouTube: How to Setup a Domain Controller for Active Directory (On An Azure VM)](https://www.youtube.com/watch?v=CRItvaqJjjY&ab_channel=Z)
 
 <h2>Environments and Technologies Used</h2>
 
@@ -20,37 +20,54 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <h2>Operating Systems Used </h2>
 
 - Windows Server 2022
-- Windows 10 (21H2)
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+- Setup Azure VNet & Windows Server VM
+- Follow "Add Roles and Features" Wizard
+- Add "Active Directory Domain Services" Role
+- Promote Server to Domain Controller & Restart
+- "Add a New Forest" and Create Domain Name and DSRM Password
+- Restart Server and Log in to Domain with Domain Name Context
 
 <h2>Deployment and Configuration Steps</h2>
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/R20lWZa.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Create virtual network and a Windows Server VM inside of Azure. Be sure the VM is in the same region and on the created virtual network.
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/JONEZKI.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Follow along with the wizard, being sure to add the "Active Directory Domain Services" Role.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/vxF1idM.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Promote server to domain controller.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/zOxVkAq.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Add a "New Forest" and create a dommain name. Click next and create DSRM password.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/C6EtcBw.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Restart and log back into domain with proper context (domainname\username). Congrats! Active Directory is deployed on your domain controller!
 </p>
 <br />
